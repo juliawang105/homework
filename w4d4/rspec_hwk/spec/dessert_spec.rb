@@ -5,7 +5,7 @@ require 'dessert'
 Instructions: implement all of the pending specs (the `it` statements without blocks)! Be sure to look over the solutions when you're done.
 =end
 
-describe Dessert do
+RSpec.describe Dessert do
   let(:chef) { double("chef") }
   let(:cake) { Dessert.new( "cake", 20, chef)}
 
@@ -24,7 +24,7 @@ describe Dessert do
     end
 
     it "raises an argument error when given a non-integer quantity" do 
-      expect { Dessert.new("pie", "sugar", chef) to raise_error(ArgumentError)
+      expect { Dessert.new("pie", "sugar", chef)}.to raise_error(ArgumentError)
     end
   end
 
@@ -50,9 +50,11 @@ describe Dessert do
     it "subtracts an amount from the quantity" do 
       cake.eat(5)
       expect(cake.quantity).to eq(15)
+    end
 
     it "raises an error if the amount is greater than the quantity" do
-      expect {cake.eat(55) to raise_error("not enough left!")
+      expect {cake.eat(55)}.to raise_error("not enough left!")
+    end
   end
 
   describe "#serve" do
@@ -64,6 +66,8 @@ describe Dessert do
   end
 
   describe "#make_more" do
-    it "calls bake on the dessert's chef with the dessert passed in"
+    it "calls bake on the dessert's chef with the dessert passed in" do
+    end
   end
+
 end

@@ -46,17 +46,18 @@ class Simon
   end
 
   def round_success_message
-
+    puts "Yayyyyy"
   end
 
   def game_over_message
+    puts "game over!"
 
   end
 
   def reset_game
-    @sequence_length = 1
-    @seq = []
-    @game_over = false 
+    # @sequence_length = 1
+    # @seq = []
+    # @game_over = false 
 
   end
 end
